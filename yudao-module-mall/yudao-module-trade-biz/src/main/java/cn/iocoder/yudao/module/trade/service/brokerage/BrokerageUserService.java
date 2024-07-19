@@ -68,6 +68,14 @@ public interface BrokerageUserService {
     BrokerageUserDO getBindBrokerageUser(Long id);
 
     /**
+     * 获得或创建分销用户
+     *
+     * @param id 用户编号
+     * @return 分销用户
+     */
+    BrokerageUserDO getOrCreateBrokerageUser(Long id);
+
+    /**
      * 更新用户佣金
      *
      * @param id    用户编号
@@ -104,8 +112,8 @@ public interface BrokerageUserService {
     /**
      * 【会员】绑定推广员
      *
-     * @param userId       用户编号
-     * @param bindUserId   推广员编号
+     * @param userId     用户编号
+     * @param bindUserId 推广员编号
      * @return 是否绑定
      */
     boolean bindBrokerageUser(@NotNull Long userId, @NotNull Long bindUserId);
@@ -134,4 +142,5 @@ public interface BrokerageUserService {
      * @return 下级分销统计分页
      */
     PageResult<AppBrokerageUserChildSummaryRespVO> getBrokerageUserChildSummaryPage(AppBrokerageUserChildSummaryPageReqVO pageReqVO, Long userId);
+
 }
